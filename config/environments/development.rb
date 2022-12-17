@@ -13,6 +13,7 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  config.hosts << "dinopy-sturdy-winner-7x5wrx74vjxcxx7g-3000.preview.app.github.dev"
 
   # Enable server timing
   config.server_timing = true
