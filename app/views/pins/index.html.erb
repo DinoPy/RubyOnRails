@@ -5,10 +5,20 @@
 <div id="pins">
   <% @pins.each do |pin| %>
     <%= render pin %>
+    <% if pin.user == current_user%>
     <p>
+
       <%= link_to "Show this pin", pin %>
     </p>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New pin", new_pin_path %>
+<% if user_signed_in? %>
+  <%= link_to "New pin", new_pin_path %>
+<% else %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <p> To create pins you need to be logged in.  </p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<%end%>
